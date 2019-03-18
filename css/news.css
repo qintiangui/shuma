@@ -1,0 +1,95 @@
+.tle ul{
+    width: 180px;
+}
+.news-list{
+    display: flex;
+    margin-top: 30px;
+    width: 1170px;
+    border-radius: 5px;
+}
+.news-list .nmain{
+    width: 75%;
+    background-color: #fff;
+}
+.news-list .nmain .nmt{
+    display: flex;
+    padding: 10px 20px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+}
+.news-list .nmain .nmt h2{
+    font-weight: 300;
+}
+.news-list .nmain .nmt input{
+    margin-left: auto;
+    border-radius: 200px;
+    margin-top: 2px;
+    padding-left: 10px;
+    padding-right: 50px;
+    height: 32px;
+}
+.news-list .nmain .nmt .i{
+    position: absolute;
+    right: 35px;
+    top: 22px;
+}
+.news-list .nmain .nmm .nmmlist{
+    position: relative;
+    margin-bottom: 30px;
+}
+.news-list .nmain .nmm .nmmlist::after{
+    content: "";
+    background:#e1e1e1;
+    bottom: -30px;
+    left: 0;
+    height: 1px;
+    width: 95%;
+    position: absolute;
+    transition: all .66s cubic-bezier(.17, .84, .44, 1);  
+}
+.news-list .nmain .nmm .nmmlist .title{
+    padding:0 25px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+}
+.news-list .nmain .nmm .nmmlist p{
+    padding-left: 25px;
+    padding-right: 30px;
+    line-height: 1.6em;
+    color: #757575;
+}
+.news-list .nmain .nmm .nmmlist p span .i{
+   font-size: 3px;
+}
+.news-list .nmain .nmm .nmmlist .title h4{
+    font-size: 22px;
+    font-weight: 400;
+}
+.news-list .nmain .nmm .nmmlist .title h4 a{
+    color: #757575;
+}
+.news-list .nmain .nmm .nmmlist .title p{
+    margin-left: auto;
+}
+.nside{
+    width: 25%;
+    margin-left: auto;
+}
+.nside ul{
+    margin: 20px 30px;
+}
+.nside ul li:nth-child(1){
+    margin-top: 20px;
+}
+.nside ul li{
+    margin-top: 30px;
+}
+.nside ul li img{
+    width: 262px;
+    height: 130px;
+    border-radius: 5px;
+}

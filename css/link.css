@@ -1,0 +1,33 @@
+.tle ul{
+    width: 260px;
+}
+.lmain{
+    margin: 40px 0 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+.lmain .lml{
+    width: 735px;
+    height: 430px;
+}
+.lmain .lml img{
+    width:555px;
+    height: 390px;
+    margin: 20px 60px 20px 120px;
+}
+.lmain .lmr{
+    width: 395px;
+    margin-left: auto;
+}
+.lmain .lmr p{
+    margin: 15px 0;
+}
+.lmain .lmr p strong{
+    font-weight: bold;
+    color: rgb(0,176,240);
+}
+.lmain .lmr p span{
+    color: #666666;
+}

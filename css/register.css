@@ -1,0 +1,134 @@
+.res{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+.res form{
+    width: 440px;
+    padding: 30px;
+    color: #666;
+    background-color: #fafafa;
+
+}
+.res form h1{
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.res form .input-group {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+}
+.res form .input-group span{
+    width: 20px;
+    height: 29px;
+    padding: 6px 13px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+    color: #76838f;
+    border: 1px solid #e4eaec;
+    background-color: #f3f7f9;
+}
+.res form .input-group input{
+    width: 365px;
+    height: 28px;
+    padding: 6px 13px;
+    border: 1px solid #e4eaec;
+}
+.res form .yz{
+    display: flex;
+}
+.res form .yz span{
+    width: 20px;
+    height: 28px;
+    padding: 6px 13px;
+    font-size: 18px;
+    line-height: 29px;
+    font-weight: 400;
+    color: #76838f;
+    border: 1px solid #e4eaec;
+    background-color: #f3f7f9;
+}
+.res form .yz input{
+    width: 230px;
+    height: 28px;
+    padding: 6px 13px;
+    border: 1px solid #e4eaec;
+}
+.res form .yz .oi{
+    width: 124px;
+    height: 31px;
+    background-color: #eeddee;
+    padding: 5px;
+}
+.res form .yz .oi img{
+    width: 100%;
+    height: 100%;
+}
+.res form .more{
+    width: 100%;
+    height: 30px;
+    margin: 30px 0;
+    display: block;
+    position: relative;
+}
+.res form .more::after{
+    content: "";
+    background:#e1e1e1;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    transition: all .66s cubic-bezier(.17, .84, .44, 1);  
+}
+.res form .more span{
+    background-color: #fff;
+    height: 18px;
+    padding: 6px 13px;
+    position: absolute;
+    left: 40%;
+    bottom: 0;
+    z-index: 2;
+}
+.res form .tr{
+    display: flex;
+    margin-bottom: 20px;
+    height: 40px;
+}
+.res form .tr p{
+    width: 30%;
+    height: 28px;
+    line-height: 28px;
+    padding: 6px 13px;
+    text-align: left;
+}
+.res form .tr input{
+    width: 80%;
+    height: 28px;
+    padding: 6px 13px;
+    border: 1px solid #e4eaec;
+}
+.res form button{
+    width:100%;
+    height: 51px;
+    padding: 10px 18px;
+    font-size: 1.286rem;
+    border: none;
+    color: #fff;
+    background-color: #4e97d9;
+    margin-bottom: 15px;
+}
+.res form p{
+    width: 100%;
+    height: 19px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+.res form p a{
+    color: #008acf;
+}
