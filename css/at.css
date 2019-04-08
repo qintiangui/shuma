@@ -1,0 +1,44 @@
+.sde{
+    width: 100%;
+    margin-top: 60px;
+    position: relative;
+}
+.sde .sdv {
+    display: block;
+}
+.sde .sdv img {
+    width: 100%;
+    display: block;
+}
+.sde .met-text {
+    display: block;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgb(0, 0, 0,0.6);
+    overflow-y: hidden;
+}
+.sde .met-text .ll{
+    width: 100%;
+    height: 40px;
+    display: block; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+}
+.sde .met-text ul li{
+    width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+} 
+.sde .met-text ul li a {
+    color: #fff;
+    padding: 10px 0;
+}
+.sde .met-text ul li a:hover{
+    color: #008acf;
+}

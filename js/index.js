@@ -1,56 +1,108 @@
-/*定义位置：由于图片个数与下侧顺序按钮数量一致，可通过位置进行关联*/
-var index=0;
-/*当鼠标放到顺序按钮上时：
-1.将当前这个顺序按钮增加样式为红色背景
-2.移除周围其他同级元素红色背景样式
-3.获取当前顺序按钮的index
-4.通过index获取该位置图片
-5.一秒钟渐入该图片
-6.一秒钟渐出其他相邻图片
-7.防止移动过快导致的效果闪现，使用stop方法
-*/
-/*$(".num li").mousemove(function () {
-       $(this).addClass("current").siblings().removeClass("current");
-       index=$(this).index();
-       $(".img li").eq(index).stop().fadeIn(3000).siblings().stop().fadeOut(3000);
-});
-*/
-/*设置每一秒钟自动轮播：
-1.获取当前位置序号：自加操作；当超过图片最大序号时序号设置为0
-2.设置下侧顺序按钮及轮播图显示
-*/
-var time=setInterval(move,3000);
-function move() {
-   index++;
-   if (index==3){
-       index=0
-   }
-//$(".num li").eq(index).addClass("current").siblings().removeClass("current");
-   $(".img li").eq(index).stop().fadeIn(3000).siblings().stop().fadeOut(3000);
-};
-/*当鼠标划入、划出轮播图区域时：
-1.划入时停止自动轮播
-2.划出时继续自动轮播
-*/
-$(".slide").hover(function () {
-   clearInterval(time);
-},
-function () {
-   time=setInterval(move,3000);
-});
-/*点击右侧按钮时执行*/
-$(".next").click(function () {
-  move();
-});
-/*点击左侧按钮时执行*/
-function moveL() {
-    index--;
-   if (index==-1){
-       index=2
-   }
-//$(".num li").eq(index).addClass("current").siblings().removeClass("current");
-   $(".img li").eq(index).stop().fadeIn(3000).siblings().stop().fadeOut(3000);
-}
-$(".prev").click(function () {
-   moveL();
-});
+$(document).ready(function(){
+
+    var Slide = document.querySelector('.slide');
+	var Prev = document.getElementById('prev');
+	var Next = document.getElementById('next');
+	var Ul = Slide.getElementsByTagName('ul')[0];
+	var Li = Ul.getElementsByTagName('li');
+	var Div = Slide.getElementsByTagName('div');
+	var index = 0;
+	var set = setInterval(next,3000);
+
+	for(var i=0; i<Li.length; i++){
+		Li[i].index = i;
+		Li[i].onmouseover=function(){
+			index = this.index;
+			move(index);
+		}
+	}
+	Slide.onmouseover = function(){
+		clearInterval(set);
+		Prev.style.display = Next.style.display = 'block';
+	}
+	Slide.onmouseout = function(){
+		set = setInterval(next,3000);
+		Prev.style.display = Next.style.display = 'none';
+	}
+	Prev.onclick = function(){
+		prev();
+	}
+	Next.onclick = function(){
+		next();
+	}
+	function next(){
+		index++;
+
+		if(index>2){
+			index = 0;
+		}
+		
+		move(index);
+	}
+	function prev(){
+		index--;
+
+		if(index<0){
+			index = 2;
+		}
+
+		move(index);
+	}
+	function move(index){
+		for(var i=0; i<Li.length; i++){
+			Li[i].className = '';
+			Div[i].className = '';
+		}	
+		Li[index].className = 'sli';
+		Div[index].className = 'sdiv';
+    }
+    
+    //新闻向上滚动
+    $(function(){
+    //单行应用@Mr.Think
+    var _wrap=$('.ll ul');//定义滚动区域
+    var _interval=2000;//定义滚动间隙时间
+    var _moving=null;//需要清除的动画
+
+    _wrap.hover(function(){
+    clearInterval(_moving);//当鼠标在滚动区域中时，停止滚动
+    },function(){
+    _moving=setInterval(function(){
+    var _field=_wrap.find('li:first');//此变量不可放置于函数起始处，li:first取值是变化的
+    // var _field=$('ul li:first');
+    var _h=_field.height();//取得每次滚动高度
+    _field.animate({marginTop:-_h+'px',opacity:0},600,function(){//通过取负margin值，隐藏第一行
+    _field.css({marginTop:0,opacity:1}).appendTo(_wrap);//隐藏后，将该行的margin值置零，并插入到最后，实现无缝滚动
+    })
+    },_interval)//滚动间隔时间取决于_interval
+    }).trigger('mouseleave');//函数载入时，模拟执行mouseleave，即自动滚动
+    });
+
+    //切换图片
+    $(".card .left p").click(function(){
+        //alert($(this).parent().parent().children("ul").children("li").eq(0).html());
+        $(this).addClass("active");
+        $(this).parent().next().children().removeClass("active");
+        $(this).parent().parent().children("ul").children("li").eq(0).addClass("on");
+        $(this).parent().parent().children("ul").children("li").eq(1).removeClass("on");
+    });
+    $(".card .right p").click(function(){
+        $(this).addClass("active");
+        $(this).parent().prev().children().removeClass("active");
+        $(this).parent().parent().children("ul").children("li").eq(1).addClass("on");
+        $(this).parent().parent().children("ul").children("li").eq(0).removeClass("on");
+    });
+
+// $(".con").on("click",".title",function(){
+            // if("block"==$(this).next().css("display")){
+            //     $(this).next().css("display","none");
+            // }else{
+            //     $(this).next().css("display","block");
+            // }
+            // });
+
+
+
+
+
+})

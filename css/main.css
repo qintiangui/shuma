@@ -12,7 +12,7 @@ ul {
     margin: 0;
 }
 .container{
-    width: 1170px;
+    width: 1278px;
     margin: 0 auto;
 }
 a:link,a:visited{
@@ -121,65 +121,90 @@ vertical-align: middle;/*垂直居中*/
     margin-right: 10px;
 }
 .slide{
-    background-color: #fff;
     width: 100%;
-    height: 476px;
     margin-top: 60px;
     position: relative;
-    overflow: hidden;
 }
-.slide .img{
-    height: auto;
-    overflow: hidden;
+.slide div {
+    display: none;
 }
-.slide .img li{
+.slide div img {
+    display: block;
     width: 100%;
-    height: 100%;
-    float: left;
-    clear: none;
 }
-.slide .img li img{
+.slide .sdiv {
     display: block;
 }
-.slide .btn{
-    width: 100%;
+.slide>ul{
     position: absolute;
-    left: 0;
-    top: 45%;
+    display: flex;
+    left: 43%;
+    bottom: 50px;
 }
-.slide .btn a{
-    color: #fff;
+.slide>ul li {
+    background: #fafafa;
+    display: block;
+    height: 4px;
+    padding: 0 15px;
+    margin: 0 3px;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+.slide>ul .sli {
+    background: #007cc3;
+}
+#prev{
+    position: absolute;
+    color: red;
     font-size: 36px;
+    left: 0;
+    top: calc(50%);
+    transform: translateY(-50%);
+    display: none;
 }
-.slide .btn .prev{
+#next{
     position: absolute;
-    left: 5%;
+    right: 0;
+    color: red;
+    font-size: 36px;
+    top: calc(50%);
+    transform: translateY(-50%);
+    display: none;
 }
-.slide .btn .next{
+.slide .met-text {
+    display: block;
+    width: 100%;
+    height: 40px;
     position: absolute;
-    right: 5%;
+    bottom: 0;
+    left: 0;
+    background: rgb(0, 0, 0,0.6);
+    overflow-y: hidden;
 }
-.slide .bd{
-  background: rgba(0, 0, 0, 0.6);
-  padding:0;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+.slide .met-text .ll{
+    width: 100%;
+    height: 40px;
+    display: block; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
 }
-/* .slide .banner ul li img{
-  width: 100%;
-}  */
-.slide .bd .title{
-  width: 100%;
-  height: 40px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.slide .met-text ul li{
+    width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+} 
+.slide .met-text ul li a {
+    color: #fff;
+    padding: 10px 0;
 }
-.slide .bd .title p a{
-  color: #fff;
+.slide .met-text ul li a:hover{
+    color: #008acf;
 }
+
+
 .about{
     background-color: #fafafa;
     padding: 70px 0 32px 0;

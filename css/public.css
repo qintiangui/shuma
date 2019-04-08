@@ -138,27 +138,22 @@
     width: 100%;
     display: block;
 }
-.main .card a p{
-    width: 12px;height: 12px;
-    display: inline-block;
-    text-indent: -9999px;
-    border: 1px solid #cdcdcd;
-    border-radius: 7px;
-}
-.main .card a .active{
-    border: 1.5px solid #cdcdcd;
-} 
 .main .card .left,
 .main .card .right{
     display: inline-block;
+    text-indent: -9999px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #cdcdcd;
+    border-radius: 7px;
     position: absolute;
     top: 58%;
 } 
 .main .card .left {
-    left: 136px;
+    left: 145px;
 }
 .main .card .right {
-    left: 158px;
+    left: 165px;
 }
 .main .card .card-text {
     text-align: center;
